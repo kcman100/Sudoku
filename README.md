@@ -5,7 +5,7 @@ This is a C-Code implementation of a solver for Sudoku puzzles.
 
 Originaly built with Borland compiler in 2008.
 
-'''
+```
 Usage:  Sudoku <infile>
   input file should be the puzzle, with spaces for the blocks that are unknown
 Example:
@@ -18,4 +18,4 @@ Example:
  49   2
 7       6
    41  9
-'''
+```
