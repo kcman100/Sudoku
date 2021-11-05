@@ -2,11 +2,17 @@
 
 #include <stdio.h>
 #include <math.h>
-#include <conio.h>
 #include <stdlib.h>
 #include <time.h>
 
-#pragma hdrstop
+#if _MSC_VER
+  #include <conio.h>
+#endif // _MSC_VER
+
+#if __GNUG__
+  #include "conio.h"
+#endif // __GNUG__
+
 
 //---------------------------------------------------------------------------
 
@@ -90,7 +96,15 @@ bool test_input_validity( int input[9][9] )
 }
 
 
-#pragma argsused
+int random( int maximum_number )
+{
+  //int rand(void) creates a pseudo-random number in the range of 0 to RAND_MAX
+  //RAND_MAX is defined in stdlib.h and is the largest number rand will return (same as INT_MAX).
+  int minimum_number = 0 ;
+  int new_number = (rand() % (maximum_number + 1 - minimum_number)) + minimum_number;
+  return new_number ;
+}
+
 int main(int argc, char* argv[])
 {
 
